@@ -16,13 +16,15 @@ jobs:
 
       - name: Instalar dependências
         run: |
-          pip install -r requirements.txt
+          pip install -r ml-pipeline/requirements.txt
 
       - name: Executar treinamento
-        run: python train.py
+        run: |
+          cd ml-pipeline
+          python train.py
 
       - name: Upload do relatório
         uses: actions/upload-artifact@v4
         with:
           name: classification-report
-          path: report.txt
+          path: ml-pipeline/report.txt
