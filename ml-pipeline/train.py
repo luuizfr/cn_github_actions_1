@@ -31,7 +31,7 @@ f1 = f1_score(y_test, y_pred, average='weighted')
 report = classification_report(y_test, y_pred)
 
 # 7. Salvamento do relatório com métricas principais
-with open("report.txt", "w") as f:
+with open("report.txt", "w", encoding="utf-8") as f:
     f.write("=== RELATÓRIO DE CLASSIFICAÇÃO ===\n\n")
     f.write(f"Acurácia: {accuracy:.4f}\n")
     f.write(f"Precisão: {precision:.4f}\n")
